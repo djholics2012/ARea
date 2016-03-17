@@ -130,7 +130,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bf30d577eead1ef40bcf2b404289daf4, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: bf30d577eead1ef40bcf2b404289daf4, type: 2}
       propertyPath: mDataSetsToLoad.Array.data[0]
@@ -147,6 +147,10 @@ Prefab:
     - target: {fileID: 11442664, guid: bf30d577eead1ef40bcf2b404289daf4, type: 2}
       propertyPath: mPrimaryCamera
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: bf30d577eead1ef40bcf2b404289daf4, type: 2}
+      propertyPath: VuforiaLicenseKey
+      value: AXl5Wvn/////AAAAAWpkqefC0Eogjc2iNL4QOugkX4q7YWG19k6qlVw75fcownQGSw4YiV3/ZHU7GvqpW11bp3CCARtYu0qKptMhgoYGwBGguJsDLmWuJ1JEa4AWK5hxfS84nIt/10SuDBFdieHOfgVpIpqSBCGdgHdvP3WvnACMelAQpIEYq3916j31QwvnTncW6G65DQ9FS+Co5Ha1Wr+hMUDH1RzSDbC0Cjum+9O+iaCmX9oywTNWKCk9WKFLnaZX8q0eYcpitR1oHUvz4o6Vp6UJO7mnWkU+0Qr/nusKpyXTVTUxMeqItF8EEFDvPsF9Jdu7B70wztZaFo7VYwvEQ5lGn4CG4knESyh2fRXVk9/ewLZ8XcQV0Kyu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf30d577eead1ef40bcf2b404289daf4, type: 2}
