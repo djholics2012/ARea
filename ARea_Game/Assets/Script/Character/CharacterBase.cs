@@ -114,7 +114,16 @@ public class CharacterBase<T> : MonoBehaviour
     {
         _stateManager.ChangeState((int)state);
     }
-    
+
+    ///<summary>
+    ///상태 추가 함수
+    ///</summary>
+    ///
+    protected void AddState(CHARACTER_STATE stateID, State<T> state)
+    {
+        _stateManager.AddState((int)stateID, state);
+    }
+
     /// <summary>
     /// Start() 함수에 콤포넌트 입력
     /// </summary>

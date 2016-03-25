@@ -1,40 +1,45 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class Enemy_Move : MonoBehaviour {
+public class Enemy_Move : State<Enemy_Unit> {
 
-    public float speed = 0.000001f;
-    public GameObject Target;
-
-	// Use this for initialization
-	void Start ()
+    public override void Enter(Enemy_Unit owner)
     {
-        //StartCoroutine(MoveToTarget());
-    }
-	
-    void Update()
-    {
-        Vector3 dir = Target.transform.position - transform.position;
-        dir.y = 0f;
-
-        dir.Normalize( );
-
-        transform.position += dir * speed;
+        owner.SetAnimation(ANIMATION_STATE.RUN);
+        owner.MoveToTarget( ); // 목표 위치로 이동한다.
+        throw new NotImplementedException( );
     }
 
-    /// <summary>
-    /*    IEnumerator MoveToTarget()
+    public override void Update(Enemy_Unit owner)
     {
-        Vector3 dir = Target.transform.position - transform.position;
-    dir.y = 0f;
+        base.Update(owner);
 
-        dir.Normalize( );
+        owner.MoveToTarget( );
 
-        transform.position += dir * speed * Time.deltaTime;
-        
-        yield return null;
-    }*/
-    /// </summary>
-    /// <returns></returns>
+        GameObject target = owner.SearchTarget();
+        if (target != null)
+        {
+            owner.TargetObj = target;
+            owner.ChangeState(CHARACTER_STATE.MOVE);
+            return;
+        }
 
+        if (owner.IsReachTargetPos( ))
+        {
+            Debug.Log(owner.TargetPos);
+            owner.ChangeState(CHARACTER_STATE.IDLE);
+            return;
+        }
+    }
+
+    public override void FixedUpdate(Enemy_Unit owner)
+    {
+        base.FixedUpdate(owner);
+    }
+
+    public override void Exit(Enemy_Unit owner)
+    {
+        throw new NotImplementedException( );
+    }
 }
